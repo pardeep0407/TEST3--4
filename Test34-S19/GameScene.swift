@@ -12,11 +12,13 @@ import GameplayKit
 class GameScene: SKScene {
     
     var nextLevelButton:SKLabelNode!
-    
+    var lemming : SKNode!
     
     override func didMove(to view: SKView) {
         print("This is level 1")
         self.nextLevelButton = self.childNode(withName: "nextLevelButton") as! SKLabelNode
+        let lookLeft = SKAction.scaleX(to:-20 , duration: 0)
+                        self.lemming.run(lookLeft)
     }
     
     override func update(_ currentTime: TimeInterval) {
