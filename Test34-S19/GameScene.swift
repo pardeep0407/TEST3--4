@@ -13,12 +13,18 @@ class GameScene: SKScene {
     
     var nextLevelButton:SKLabelNode!
     var lemming : SKNode!
-    
+     let zombie = SKSpriteNode(imageNamed: "lemming")
+    var xd:CGFloat = 0
+    var yd:CGFloat = 0
+
     override func didMove(to view: SKView) {
         print("This is level 1")
         self.nextLevelButton = self.childNode(withName: "nextLevelButton") as! SKLabelNode
-        let lookLeft = SKAction.scaleX(to:-20 , duration: 0)
-                        self.lemming.run(lookLeft)
+       // let lookLeft = SKAction.scaleX(to:-20 , duration: 0)
+                     //   self.lemming.run(lookLeft)
+        lemming.position = CGPoint(x:150,
+                                  y:400)
+        addChild(lemming)
     }
     
     override func update(_ currentTime: TimeInterval) {
